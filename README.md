@@ -3,13 +3,12 @@ CMake
 Qt
 
 # How to build
-cmake --build build
+`cmake --build build`
 
 # How to run
-./build/your_executable
+`./build/your_executable`
 
 # Features
-
 - Basic arithmetic operations: addition, subtraction, multiplication, division
 - Parentheses support for grouping expressions
 - Expression history display
