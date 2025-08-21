@@ -35,6 +35,8 @@ private slots:
 
     void on_button_close_parenthesis_clicked();
 
+    void on_button_factorial_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

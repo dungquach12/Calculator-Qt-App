@@ -94,3 +94,9 @@ void MainWindow::on_button_close_parenthesis_clicked()
     ui->txtDisplay->insert(QChar(')'));
 }
 
+
+void MainWindow::on_button_factorial_clicked()
+{
+    ui->txtDisplay->insert(QChar('!'));
+}
+
