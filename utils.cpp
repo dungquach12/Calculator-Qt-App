@@ -63,13 +63,13 @@ void processOperator(std::stack<long long> &operands, std::stack<QChar> &operato
     long long a = operands.top(); operands.pop();
     QChar op = operators.top(); operators.pop();
     operands.push(applyOperator(a, b, op));
-    std::cout << "Processed operator: " << op.toLatin1() << " with operands: " << a << ", " << b << ", Result: " << operands.top() << std::endl;
 }
 
 void processParenthesis(std::stack<long long> &operands, std::stack<QChar> &operators) {
     if (operators.empty()) {
         throw std::runtime_error("Invalid expression: unexpected operator ')' or missing opening parenthesis.");
     }
+
     while (!operators.empty() && operators.top() != '(') {
         if (operands.size() < 2) {
             throw std::runtime_error("Invalid expression: not enough operands for operator.");
@@ -79,9 +79,11 @@ void processParenthesis(std::stack<long long> &operands, std::stack<QChar> &oper
         QChar op = operators.top(); operators.pop();
         operands.push(applyOperator(firstNum, secNum, op));
     }
+
     if (operators.empty() || operators.top() != '(') {
         throw std::runtime_error("Invalid expression: Mismatched parentheses.");
     }
+
     operators.pop();
 }
 
@@ -95,6 +97,30 @@ void processFactorial(std::stack<long long> &operands) {
     std::cout << "Processed factorial, Result: " << result << std::endl;
 }
 
+void processAbsolute(std::stack<long long> &operands, std::stack<QChar> &operators) {
+    if (operands.empty()) {
+        throw std::runtime_error("Invalid expression: No operands for absolute value.");
+    }
+
+    while (!operators.empty() && operators.top() != '|') {
+        if (operands.size() < 2) {
+            throw std::runtime_error("Invalid expression: not enough operands for operator.");
+        }
+
+        long long secNum = operands.top(); operands.pop();
+        long long firstNum = operands.top(); operands.pop();
+        QChar op = operators.top(); operators.pop();
+        long long res = applyOperator(firstNum, secNum, op);
+
+        operands.push(std::abs(res));
+    }
+    
+    if (operators.empty() || operators.top() != '|') {
+        throw std::runtime_error("Invalid expression: Mismatched parentheses.");
+    }
+    operators.pop();
+}
+
 long long calculateExpression(const QString &expr) {
     if (expr.trimmed().isEmpty()) {
         std::cerr << "Error: Empty expression" << std::endl;
@@ -103,6 +129,7 @@ long long calculateExpression(const QString &expr) {
 
     std::stack<long long> operands;
     std::stack<QChar> operators;
+    bool checkOpenedAbs = false;
 
     try {
         for (int i = 0; i < expr.length(); ++i) {
@@ -120,7 +147,13 @@ long long calculateExpression(const QString &expr) {
 
             } else if (expr[i] == '!'){
                 processFactorial(operands);
-
+            } else if (expr[i] == '|') {
+                checkOpenedAbs = !checkOpenedAbs;
+                if (checkOpenedAbs) {
+                    operators.push('|');
+                } else {
+                    processAbsolute(operands, operators);
+                }
             } else {
                 while (!operators.empty() && priority(operators.top()) >= priority(expr[i])) {
                     processOperator(operands, operators);

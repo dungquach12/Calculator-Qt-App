@@ -37,6 +37,8 @@ private slots:
 
     void on_button_factorial_clicked();
 
+    void on_button_absolute_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

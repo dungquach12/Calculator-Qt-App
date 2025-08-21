@@ -100,3 +100,11 @@ void MainWindow::on_button_factorial_clicked()
     ui->txtDisplay->insert(QChar('!'));
 }
 
+
+void MainWindow::on_button_absolute_clicked()
+{
+    int cursorPos = ui->txtDisplay->cursorPosition();
+    ui->txtDisplay->insert("||");
+    ui->txtDisplay->setCursorPosition(cursorPos + 1);
+}
+
