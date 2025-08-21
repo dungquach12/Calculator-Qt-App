@@ -6,6 +6,6 @@
 #include <QString>
 #include <QChar>
 
-int calculateExpression(const QString &expr);
+long long calculateExpression(const QString &expr);
 
 #endif // UTILS_H
