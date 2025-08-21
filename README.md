@@ -16,7 +16,7 @@ Supports basic arithmetic, factorials, parentheses, and a clean button-based UI.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/calculator.git
+   git clone https://github.com/dungquach12/Calculator-Qt-App
    cd calculator
    ```
 
