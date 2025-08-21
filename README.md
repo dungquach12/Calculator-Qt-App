@@ -1,18 +1,39 @@
-# Requirements
-CMake
-Qt
+# Calculator
 
-# How to build
-`cmake --build build`
+A simple calculator application built with **Qt** and **CMake**.  
+Supports basic arithmetic, factorials, parentheses, and a clean button-based UI.
 
-# How to run
-`./build/your_executable`
+---
 
-# Features
-- Basic arithmetic operations: addition, subtraction, multiplication, division
-- Parentheses support for grouping expressions
-- Factorial support
-- Expression history display
-- Backspace and clear entry (CE) functionality
-- Button-based input for digits and operators
-- Expression evaluation with error handling for invalid input and division
+## Requirements
+- CMake (>= 3.16 recommended)
+- Qt 6 (tested with Qt 6.9.1)
+- A C++17-compatible compiler (e.g. GCC, Clang, MSVC, MinGW)
+
+---
+
+## Build Instructions
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/calculator.git
+   cd calculator
+   ```
+
+2. Configure the project with CMake:
+   ```bash
+   mkdir build
+   cd build
+   cmake ..
+   ```
+
+3. Build the project
+   ```bash
+   cmake --build build
+   ```
+
+## Run
+### On Windows:
+    ```bash
+    .\build\Calculator.exe
+    ```
