@@ -51,11 +51,39 @@
     <property name="spacing">
      <number>4</number>
     </property>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <stylestrategy>NoAntialias</stylestrategy>
+        <kerning>false</kerning>
+       </font>
+      </property>
+      <property name="text">
+       <string>Calculator</string>
+      </property>
+     </widget>
+    </item>
     <item row="2" column="0">
      <widget class="QLineEdit" name="hisDisplay">
       <property name="font">
        <font>
         <pointsize>12</pointsize>
+        <stylestrategy>NoAntialias</stylestrategy>
+        <kerning>false</kerning>
         <fontweight>Light</fontweight>
        </font>
       </property>
@@ -113,6 +141,8 @@ border: 2px solid transparent;
       <property name="font">
        <font>
         <pointsize>16</pointsize>
+        <stylestrategy>NoAntialias</stylestrategy>
+        <kerning>false</kerning>
        </font>
       </property>
       <property name="cursor">
@@ -136,32 +166,6 @@ border: 2px solid transparent;</string>
       </property>
       <property name="readOnly">
        <bool>false</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>18</pointsize>
-        <stylestrategy>NoAntialias</stylestrategy>
-        <kerning>false</kerning>
-       </font>
-      </property>
-      <property name="text">
-       <string>Calculator</string>
       </property>
      </widget>
     </item>
@@ -376,6 +380,7 @@ border: 2px solid transparent;</string>
         <property name="font">
          <font>
           <pointsize>7</pointsize>
+          <bold>false</bold>
           <stylestrategy>NoAntialias</stylestrategy>
           <kerning>false</kerning>
          </font>
@@ -599,7 +604,7 @@ border: 2px solid transparent;</string>
         </property>
         <property name="font">
          <font>
-          <pointsize>14</pointsize>
+          <pointsize>15</pointsize>
           <stylestrategy>NoAntialias</stylestrategy>
           <kerning>false</kerning>
          </font>
@@ -637,7 +642,7 @@ border: 2px solid transparent;</string>
         </property>
         <property name="font">
          <font>
-          <pointsize>14</pointsize>
+          <pointsize>15</pointsize>
           <stylestrategy>NoAntialias</stylestrategy>
           <kerning>false</kerning>
          </font>
@@ -675,7 +680,7 @@ border: 2px solid transparent;</string>
         </property>
         <property name="font">
          <font>
-          <pointsize>14</pointsize>
+          <pointsize>15</pointsize>
           <stylestrategy>NoAntialias</stylestrategy>
           <kerning>false</kerning>
          </font>
@@ -713,7 +718,7 @@ border: 2px solid transparent;</string>
         </property>
         <property name="font">
          <font>
-          <pointsize>14</pointsize>
+          <pointsize>15</pointsize>
           <stylestrategy>NoAntialias</stylestrategy>
           <kerning>false</kerning>
          </font>
@@ -855,6 +860,47 @@ border: 2px solid transparent;</string>
           <width>30</width>
           <height>30</height>
          </size>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QPushButton" name="button_percent">
+        <property name="minimumSize">
+         <size>
+          <width>70</width>
+          <height>42</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+          <stylestrategy>NoAntialias</stylestrategy>
+          <kerning>false</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>%</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="2">
+       <widget class="QPushButton" name="pushButton">
+        <property name="minimumSize">
+         <size>
+          <width>70</width>
+          <height>42</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>13</pointsize>
+          <bold>true</bold>
+          <stylestrategy>NoAntialias</stylestrategy>
+          <kerning>false</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>.</string>
         </property>
        </widget>
       </item>

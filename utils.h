@@ -3,8 +3,10 @@
 
 #include <iostream>
 #include <stack>
+
 #include <QString>
 #include <QChar>
+#include <QSet>
 
 long long calculateExpression(const QString &expr);
 
