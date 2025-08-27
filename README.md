@@ -20,17 +20,8 @@ Supports basic arithmetic, factorials, parentheses, and a clean button-based UI.
    cd calculator
    ```
 
-2. Configure the project with CMake:
-   ```bash
-   mkdir build
-   cd build
-   cmake ..
-   ```
-
-3. Build the project
-   ```bash
-   cmake --build build
-   ```
+2. Open Qt Creator and load the `CMakeLists.txt` file.
+   Configure the project and build it using the built-in tools.
 
 ## Run
 ### On Windows:
